@@ -42,6 +42,16 @@ INSTALLED_APPS = [
     "rest_framework", # Django REST Framework for building APIs
 ]
 
+# For JWT authentication
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':['rest_framework.authentication.SessionAuthentication',],
+    'DEFAULT_PERMISSION_CLASSES':['rest_framework.permissions.IsAuthenticated',],
+}
+
+# can be used to extend the default User model
+AUTH_USER_MODEL = 'assets.User'
+
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
