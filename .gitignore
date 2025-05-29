@@ -1,0 +1,60 @@
+# General
+*.log
+*.pot
+*.pyc
+__pycache__/
+*.py[cod]
+*.swp
+*.swo
+.DS_Store
+.env
+*.env
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React build
+frontend/build/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Python
+*.py[cod]
+__pycache__/
+*.so
+*.egg-info/
+dist/
+build/
+
+# Django
+*.sqlite3
+db.sqlite3
+/media
+/staticfiles
+/static/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# VSCode and IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Coverage reports
+htmlcov/
+coverage.xml
+.coverage
+.cache
+
+# MacOS
+.DS_Store
