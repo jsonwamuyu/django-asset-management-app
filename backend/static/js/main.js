@@ -1,0 +1,1 @@
+console.log('Welcome to Asset Management App.')
