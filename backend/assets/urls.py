@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .api_views import AssetViewSet, AssetAssignmentViewSet, UserViewSet
+from . import views
 
 router = DefaultRouter()
 router.register(r"users", UserViewSet, basename="user")
