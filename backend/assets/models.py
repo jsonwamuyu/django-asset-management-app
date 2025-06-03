@@ -45,7 +45,7 @@ class Asset(models.Model):
 
 
 class AssetAssignment(models.Model):
-    """Model representing and asset assignment."""
+    """Model representing asset assignment."""
     asset = models.OneToOneField(Asset, on_delete=models.CASCADE)
     assigned_at = models.DateTimeField(auto_now_add=True, verbose_name="Assigned At", help_text="The date and time when the asset was assigned")
     assigned_to = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Assigned To", help_text="The user to whom the asset is assigned")
