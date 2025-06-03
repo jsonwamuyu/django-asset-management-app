@@ -1,6 +1,6 @@
 from rest_framework import permissions
 
-class IsAdminOrReadOnly(permissions.BasePermissions):
+class IsAdminOrReadOnly(permissions.BasePermission):
     """
     Custom permission to only allow admins to edit objects.
     All users can read.
@@ -11,7 +11,7 @@ class IsAdminOrReadOnly(permissions.BasePermissions):
             return True
         return request.method in permissions.SAFE_METHODS
     
-class IsAdminOrAssignedOnly(permissions.BasePermissions):
+class IsAdminOrAssignedOnly(permissions.BasePermission):
     """
     Custom permission to allow admins full access and staff to view only their assigned assets.
     """

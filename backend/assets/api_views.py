@@ -1,7 +1,12 @@
 from rest_framework import viewsets, permissions
-from .models import Asset, AssetAssignment
-from .serializers import AssetSerializer, AssetAssignmentSerializer
+from .models import Asset, AssetAssignment, User
+from .serializers import AssetSerializer, AssetAssignmentSerializer,UserSerializer
 from .permissions import IsAdminOrReadOnly, IsAdminOrAssignedOnly
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdminOrReadOnly]
 
 class AssetViewSet(viewsets.ModelViewSet):
     """
