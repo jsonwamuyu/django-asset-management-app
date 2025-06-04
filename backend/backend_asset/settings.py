@@ -153,10 +153,64 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # This is a development setting, do not use in production
 
 #LOGGING SETTINGS
+
+
 LOGGING = {
-    'version':1,
-    'disable_existing_loggers':False,
-    'formatter':{
-        'verbose':{}
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    #Formatters define how the log messages are displayed - verbose or simple.
+    # They can include information like timestamp, log level, message, etc.
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '[{levelname}] {message}',
+            'style': '{',
+        },
     },
+    # handlers determine where the logs are sent/stored can be console, file, email or remote logging service or database.
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+            'level': 'DEBUG',  # Set to DEBUG to capture all logs in the console
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
+            'formatter': 'verbose',
+            'level': 'INFO',  # Set to INFO to capture all logs in the file
+        },
+    },
+
+    # Loggers are the entry points for logging messages. They can be configured to use specific handlers and log levels.
+    'loggers': {
+        # Default Django logger
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        # Custom logger for the assets app
+        'assets': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        # Custom logger for the posts app   
+        'posts': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        # Custom logger for the backend_asset project
+        'backend_asset': {
+            'handlers': ['console', 'file'],
+            'level': 'WARNING',  # Set to WARNING to capture warnings and errors
+            'propagate': True,  # Propagate to the root logger
+        },
+    }
 }
