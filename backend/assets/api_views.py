@@ -37,3 +37,17 @@ class AssetAssignmentViewSet(viewsets.ModelViewSet):
             return AssetAssignment.objects.filter(assigned_to=user)
         return AssetAssignment.objects.none()
 
+    def perform_create(self, serializer):
+        """
+        Override to send notification email when an asset is assigned.
+        """
+        instance = serializer.save()
+
+        # send email after saving the instance
+        user_email = instance.assigned_to.email
+        asset_name = instance.asset.name
+        serial_number = instance.asset.serial_number
+
+        from .utils import notify_user_asset_assignment
+        notify_user_asset_assignment(user_email, asset_name, serial_number)    
+

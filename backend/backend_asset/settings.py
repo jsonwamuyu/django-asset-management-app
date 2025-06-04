@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    "assets", # Custom app for managing assets
+    "assets.apps.AssetsConfig", # Custom app for managing assets
+    "posts",
     "rest_framework", # Django REST Framework for building APIs
 ]
 
@@ -136,3 +137,26 @@ STATICFILES_DIRS=[
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Send email notification settings 
+# https://docs.djangoproject.com/en/5.2/topics/email/
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'zhaviawamuyu@gmail.com'
+EMAIL_HOST_PASSWORD = 'ksxkdvfkdqpmtwiw' # Use your actual email and password here
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# This is a development setting, do not use in production
+
+#LOGGING SETTINGS
+LOGGING = {
+    'version':1,
+    'disable_existing_loggers':False,
+    'formatter':{
+        'verbose':{}
+    },
+}
