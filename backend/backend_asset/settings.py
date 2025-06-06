@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "assets.apps.AssetsConfig", # Custom app for managing assets
-    "posts",
+    "posts.apps.PostsConfig",
     "rest_framework", # Django REST Framework for building APIs
 ]
 
@@ -61,7 +61,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "custom_middleware.AssetAssignmentMiddleware",  # Custom middleware for asset assignment
+    # "custom_middlewares.asset_management.AssetAssignmentMiddleware",  # Custom middleware for asset assignment
 ]
 
 ROOT_URLCONF = "backend_asset.urls"

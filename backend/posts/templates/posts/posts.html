@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -10,18 +11,14 @@
         <div class="main-wrapper">
             <div class="container">
                 <h4>Recent Posts </h4>
-                {% if posts.length > 0 %}
-                    <ul>
-                        {% for posts in posts%} 
-                            <li>
-                                Title:<h5>{{post.title}}</h5>
-                            </li>
-                            <li>Body: <h5>{{post.body}}</h5></li>
-                        {%endfor%}
-                    </ul>
-                {% else%}
+                {% for post in posts%}
+                    <div>
+                        <h3>{{post.title}}</h3>
+                        <p>{{post.body}}</p>
+                    </div>
+                {% empty %}
                     <h6 style="color:gray;">Sorry. Currently there are no posts</h6>
-                {%endif%}
+                {% endfor %}
             </div>
         </div>
     </body>
