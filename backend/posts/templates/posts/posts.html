@@ -6,19 +6,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Assets</title>
         <link rel="stylesheet" href="{% static 'css/main.css'%}">
+
+        <style>
+            .pagination{
+                margin-top:2rem;
+                font-size:12px;
+            }
+            .pagination a, .pagination span{
+                margin:0 5px;
+                padding:6px 12px;
+                border: 1px solid #ddd;
+                text-decoration:none;
+            }
+            .pagination span.current{
+                font-weight:bold;
+                background-color:#eee;
+            }
+        </style>
     </head>
     <body>
         <div class="main-wrapper">
             <div class="container">
-                <h4>Recent Posts </h4>
-                {% for post in posts%}
+                <h3>Recent Posts </h3>
+                {% for post in page_obj %}
                     <div>
-                        <h3>{{post.title}}</h3>
+                        <h6>{{post.title}}</h6>
                         <p>{{post.body}}</p>
                     </div>
                 {% empty %}
                     <h6 style="color:gray;">Sorry. Currently there are no posts</h6>
                 {% endfor %}
+
+                {% comment %} Paginator section {% endcomment %}
+                <div class="pagination">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">First</a>
+                        <a href="?page={{page_obj.previous_page_number}}">Previous</a>
+                    {% endif %}
+
+                    <span>
+                        Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{page_obj.next_page_number}}">Next</a>
+                        <a href="?page={{page_obj.paginator.num_pages}}">Last</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </body>
