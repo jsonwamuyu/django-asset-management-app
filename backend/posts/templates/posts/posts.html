@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Assets</title>
-        <link rel="stylesheet" href="{% static 'css/main.css'%}">
+{% extends 'layout.html' %}
 
-        <style>
-            .pagination{
-                margin-top:2rem;
-                font-size:12px;
-            }
-            .pagination a, .pagination span{
-                margin:0 5px;
-                padding:6px 12px;
-                border: 1px solid #ddd;
-                text-decoration:none;
-            }
-            .pagination span.current{
-                font-weight:bold;
-                background-color:#eee;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="main-wrapper">
-            <div class="container">
+{% block title %}
+    Posts
+{% endblock %}
+
+{% block content %}
+<div class="container">
                 <h3>Recent Posts </h3>
                 {% for post in page_obj %}
                     <div>
@@ -53,7 +32,6 @@
                         <a href="?page={{page_obj.paginator.num_pages}}">Last</a>
                     {% endif %}
                 </div>
-            </div>
-        </div>
-    </body>
-</html>
+</div>
+
+{% endblock %}
