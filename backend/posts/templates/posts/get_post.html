@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}Post{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <article>
+            <h4>{{post.title}}</h4>
+            <p>{{post.body}}</p>
+            <p style="font-size:14px; font-style:italic;color:gray;">{{post.created_at}}</p>
+        </article>
+    </div>
+{% endblock %}

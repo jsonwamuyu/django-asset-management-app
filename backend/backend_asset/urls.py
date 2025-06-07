@@ -7,8 +7,8 @@ urlpatterns = [
     path("", views.homepage,name='homepage'),
     path("about/", views.about,name="about"),
 
-    path("posts/", include('posts.urls', namespace='posts'), name="posts"),
+    path("posts/", include('posts.urls', namespace='posts')),
 
     # API routes from the assets app
-    path("api/",include("assets.urls",namespace='assets'), name="assets"),
+    path("api/",include("assets.urls",namespace='assets')),
 ]
