@@ -16,14 +16,14 @@
         <nav class="nav-bar" style=" background-color:#191919; color:white;">
             <div class="container" style="display:flex;flex-direction:row; justify-content:space-between; align-items:center; width:900px;">
                 <div class="logo">
-                    <a href="/">
+                    <a href="{% url 'homepage' %}">
                         <h1 class="logo-text">AMS</h1>
                     </a>
                 </div>
                 <ul class="nav-links" style="display:flex; flex-direction:row; gap:1.5rem;color:white;">
-                    <li style="color:white;"><a href="/"  style="color:white;">Home</a></li>
-                    <li><a href="/posts" style="color:white;">Posts</a></li>
-                    <li><a href="/about" style="color:white;">About Us</a></li>
+                    <li style="color:white;"><a href="{% url 'homepage'%}"  style="color:white;">Home</a></li>
+                    <li><a href="{% url 'posts:posts' %}" style="color:white;">Posts</a></li>
+                    <li><a href="{% url 'about'%}" style="color:white;">About Us</a></li>
                     <li><a href="/about" style="color:white;">Blog</a></li>
                 </ul>
                 <div>

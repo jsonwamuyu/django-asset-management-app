@@ -6,7 +6,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=100)
     body=models.TextField()
-    slug = models.SlugField()
+    slug = models.SlugField(default="this-is-a-post")
     created_at=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

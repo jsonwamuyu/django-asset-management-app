@@ -8,18 +8,17 @@
 <div class="container">
                 <h4>Recent Posts </h4>
                 {% for post in page_obj %}
-                    <a href="{%  url 'posts:post' post.id %}" style="margin-bottom:0.5rem;display:flex;flex-direction:column;">
-                        <p style="font-size:1.25rem;">{{post.title}}</p>
-                        {% comment %} {{post.body}} {% endcomment %}
-                        {% comment %} <p>{{post.body}}</p>
-                        <p style="font-size:14px; font-style:italic;padding-top:0.25rem;color:gray;">{{post.created_at}}</p> {% endcomment %}
-                    </a>
+                    <p  style="margin-bottom:0.5rem;font-size:1.25rem;">
+                        <a href="{%  url 'posts:post' post.id %}">{{post.title}}</a>
+                    </p>
+                    {% comment %} <p>{{post.slug}}</p> {% endcomment %}
+                   
                 {% empty %}
                     <h6 style="color:gray;">Sorry. Currently there are no posts</h6>
                 {% endfor %}
 
                 {% comment %} Paginator section {% endcomment %}
-                <div class="pagination">
+                <div class="pagination" style="margin-top:3rem; margin-left:-0.5rem">
                     {% if page_obj.has_previous %}
                         <a href="?page=1">First</a>
                         <a href="?page={{page_obj.previous_page_number}}">Previous</a>
