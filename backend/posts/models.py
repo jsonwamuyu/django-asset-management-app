@@ -7,6 +7,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     body=models.TextField()
     slug = models.SlugField(default="this-is-a-post")
+    banner = models.ImageField(default='banner.png', blank=True)
     created_at=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
