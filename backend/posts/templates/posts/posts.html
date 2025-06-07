@@ -6,33 +6,33 @@
 
 {% block content %}
 <div class="container">
-                <h4>Recent Posts </h4>
-                {% for post in page_obj %}
-                    <p  style="margin-bottom:0.5rem;font-size:1.25rem;">
-                        <a href="{%  url 'posts:post' post.id %}">{{post.title}}</a>
-                    </p>
-                    {% comment %} <p>{{post.slug}}</p> {% endcomment %}
+    <h4>Recent Posts </h4>
+    {% for post in page_obj %}
+        <p  style="margin-bottom:.5rem;font-size:1.25rem;">
+            <a href="{%  url 'posts:post' post.id %}">{{post.title}}</a>
+        </p>
+        {% comment %} <p>{{post.slug}}</p> {% endcomment %}
                    
-                {% empty %}
-                    <h6 style="color:gray;">Sorry. Currently there are no posts</h6>
-                {% endfor %}
+    {% empty %}
+        <h6 style="color:gray;">Sorry. Currently there are no posts</h6>
+    {% endfor %}
 
-                {% comment %} Paginator section {% endcomment %}
-                <div class="pagination" style="margin-top:3rem; margin-left:-0.5rem">
-                    {% if page_obj.has_previous %}
-                        <a href="?page=1">First</a>
-                        <a href="?page={{page_obj.previous_page_number}}">Previous</a>
-                    {% endif %}
+    {% comment %} Paginator section {% endcomment %}
+    <div class="pagination" style="margin-top:3rem; margin-left:-0.5rem">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">First</a>
+            <a href="?page={{page_obj.previous_page_number}}">Previous</a>
+        {% endif %}
 
-                    <span>
-                        Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
-                    </span>
+        <span>
+            Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+        </span>
 
-                    {% if page_obj.has_next %}
-                        <a href="?page={{page_obj.next_page_number}}">Next</a>
-                        <a href="?page={{page_obj.paginator.num_pages}}">Last</a>
-                    {% endif %}
-                </div>
+        {% if page_obj.has_next %}
+            <a href="?page={{page_obj.next_page_number}}">Next</a>
+            <a href="?page={{page_obj.paginator.num_pages}}">Last</a>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}
