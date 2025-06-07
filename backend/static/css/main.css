@@ -70,6 +70,18 @@ html, body{
     color: white;
 }
 
+.pagination a, .pagination span{
+    margin:0 5px;
+    padding:6px 12px;
+    font-size: 12px;
+    text-decoration: none;
+    border:1px solid #ddd;
+}
+
+.pagination span.current {
+font-weight: bold;
+background-color: #eee;
+}
 
 
 

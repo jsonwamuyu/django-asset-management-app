@@ -6,11 +6,12 @@
 
 {% block content %}
 <div class="container">
-                <h3>Recent Posts </h3>
+                <h4>Recent Posts </h4>
                 {% for post in page_obj %}
-                    <div>
+                    <div style="margin-bottom:1rem;display:flex;flex-direction:column;">
                         <h6>{{post.title}}</h6>
                         <p>{{post.body}}</p>
+                        <p style="font-size:14px; font-style:italic;padding-top:0.25rem;color:gray;">{{post.created_at}}</p>
                     </div>
                 {% empty %}
                     <h6 style="color:gray;">Sorry. Currently there are no posts</h6>

@@ -24,6 +24,7 @@ class Migration(migrations.Migration):
                 ),
                 ("title", models.CharField(max_length=200)),
                 ("body", models.TextField()),
+                ("slug", models.SlugField()),
                 ("created_at", models.DateTimeField(auto_now_add=True)),
             ],
             options={
