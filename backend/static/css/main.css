@@ -57,6 +57,7 @@ html, body{
     border: 1px solid blue;
     outline: none;
     border-radius: 0.25rem;
+    cursor: pointer;
 }
 
 .btn-outline{
@@ -91,11 +92,12 @@ background-color: #eee;
     background-color: #eee;
 }
 
-
-
 a{
     text-decoration: none;
+    color:blue;
+    font-weight: bold;
 }
+
 h1,h2,h3,h4,h5,h6{
     margin-bottom: 1rem;
 }

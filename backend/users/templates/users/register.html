@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <h4>Register</h4>
-        <form style="max-width:450px;display:flex;gap:1rem;flex-direction:column;">
+        <form style="max-width:450px;display:flex;gap:1rem;flex-direction:column; border-bottom:1px solid gray;">
+            {% csrf_token %}
             <div style="display: flex; flex-direction: column;">
                 <label for="username" style="font-size: 0.875rem;">Username:</label>
                 <input type="text" placeholder="Enter your username" style="padding: 1rem; outline: none;border: 1px solid gray;">
@@ -22,10 +23,14 @@
                 <label for="username" style="font-size: 0.875rem;">Password:</label>
                 <input type="password" placeholder="Enter your password" style="padding: 1rem; outline: none;border: 1px solid gray;">
             </div>
-            <div>
+            <div style="padding-bottom:2rem;">
                 <button class="btn btn-full">Create Account</button>
             </div>
         </form>
+
+        <div style="margin-top:1rem;">
+            <p style="font-size:14px;">Already have an account? <a href="{% url 'users:login' %}">Login here.</a></p>
+        </div>
     </div>
 </body>
 </html>
