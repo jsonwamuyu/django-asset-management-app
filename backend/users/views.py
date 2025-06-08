@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 
 
 
@@ -32,6 +32,11 @@ def register(request):
 
     return render(request,"users/register.html", {"form":form})
 
+
+def logout(request):
+    if request.method == "POST":
+        logout(request)
+        return redirect('users:logout')
 
 def reset_password(request):
     return render(request, 'users/reset_password.html')

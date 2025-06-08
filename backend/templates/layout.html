@@ -29,6 +29,10 @@
                 <div>
                     <a href="{% url 'users:login' %}" class="btn btn-full" style="cursor:pointer;background-color:blue;padding:1rem; color:white; outline:none; border-radius:0.25rem; border: none;">Login</a>
                 </div>
+                <form action="{% url 'users:logout' %}" method="POST">
+                   {% csrf_token %}
+                   <button class="btn btn-outline">Logout</button>
+                </form>
             </div>
         </nav>
 
