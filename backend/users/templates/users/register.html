@@ -8,11 +8,22 @@
 </head>
 <body>
     <div class="container">
-        <h5>Register</h5>
-        <form>
+        <h4>Register</h4>
+        <form style="max-width:450px;display:flex;gap:1rem;flex-direction:column;">
             <div style="display: flex; flex-direction: column;">
                 <label for="username" style="font-size: 0.875rem;">Username:</label>
                 <input type="text" placeholder="Enter your username" style="padding: 1rem; outline: none;border: 1px solid gray;">
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <label for="email" style="font-size: 0.875rem;">Email Address:</label>
+                <input type="email" placeholder="Enter your email address" style="padding: 1rem; outline: none;border: 1px solid gray;">
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <label for="username" style="font-size: 0.875rem;">Password:</label>
+                <input type="password" placeholder="Enter your password" style="padding: 1rem; outline: none;border: 1px solid gray;">
+            </div>
+            <div>
+                <button class="btn btn-full">Create Account</button>
             </div>
         </form>
     </div>

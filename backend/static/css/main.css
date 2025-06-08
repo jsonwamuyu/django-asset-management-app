@@ -54,7 +54,7 @@ html, body{
 
 .btn{
     padding : 12px 14px;
-    border: 1px solid inherit;
+    border: 1px solid blue;
     outline: none;
     border-radius: 0.25rem;
 }
