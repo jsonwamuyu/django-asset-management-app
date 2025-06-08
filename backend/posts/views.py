@@ -3,10 +3,8 @@ from .models import Post
 from django.http import HttpResponse
 from django.core.paginator import Paginator
 
-# Create your views here.
 
 def posts(request):
-    # return HttpResponse('posts page')
     posts = Post.objects.all().order_by('-id')
     paginator = Paginator(posts, 5)
     page_number = request.GET.get('page')
@@ -17,3 +15,7 @@ def posts(request):
 def get_post(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     return render(request, 'posts/get_post.html', {'post':post})
+
+
+def new_post(request):
+    return render(request, 'posts/new_post.html')

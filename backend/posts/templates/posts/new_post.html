@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %} Create a post {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h4>Create a Post.</h4>
+        <form action="{% url 'posts:new-post' %}" method="POST">
+           {% csrf_token %}
+           
+           <div>
+                <button class="btn btn-full">Create Post</button>
+           </div>
+        </form>
+    </div>
+{% endblock %}
