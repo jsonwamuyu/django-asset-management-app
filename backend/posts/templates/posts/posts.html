@@ -18,7 +18,7 @@
     {% endfor %}
 
     {% comment %} Paginator section {% endcomment %}
-    <div class="pagination" style="margin-top:3rem; margin-left:-0.5rem">
+    <div class="pagination" style="margin-top:3rem; margin-left:-8px">
         {% if page_obj.has_previous %}
             <a href="?page=1">First</a>
             <a href="?page={{page_obj.previous_page_number}}">Previous</a>

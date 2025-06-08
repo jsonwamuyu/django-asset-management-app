@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container" style="display:flex;gap:2rem;">
+        <div style="display:relative;width:200px; height:200px;border-radius:0.125rem;">
+            <img src="{{post.banner.url}}" style="display:absolute; inset:0; max-width:200px; max-height:200px; border-radius:0.25rem;" alt="{{post.title}}"/>
+        </div>
         <article>
             <h4>{{post.title}}</h4>
             <p>{{post.body}}</p>

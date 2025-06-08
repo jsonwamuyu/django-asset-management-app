@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     "assets.apps.AssetsConfig", # Custom app for managing assets
     "posts.apps.PostsConfig",
+    "users.apps.UsersConfig",
+    
     "rest_framework", # Django REST Framework for building APIs
 ]
 

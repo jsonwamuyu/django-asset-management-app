@@ -6,12 +6,13 @@ from django.conf import settings
 
 
 
-urlpatterns = [
+urlpatterns =[
     path("admin/", admin.site.urls),
     path("", views.homepage,name='homepage'),
     path("about/", views.about,name="about"),
 
     path("posts/", include('posts.urls', namespace='posts')),
+    path("users/", include('users.urls', namespace="users")),
 
     # API routes from the assets app
     path("api/",include("assets.urls",namespace='assets')),
