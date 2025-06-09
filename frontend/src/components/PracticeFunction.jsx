@@ -5,6 +5,7 @@ import {flushSync} from 'react-dom';
 function CountTwo() {
   const [count, setCount] = useState(0);
   const [fullname, setFullname] = useState("John Doe");
+  const [users, setUsers] = useState([])
 
   const increment = () => {
     setCount(() => count + 1);
@@ -29,8 +30,27 @@ function CountTwo() {
     );
   }, [count, fullname]);
 
+//   Fetch users
+    useEffect(()=>{
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(data => {
+            setUsers(data.slice(0, 10));
+        })
+    },[])
+
   return (
     <div>
+
+        <h2>Users</h2>
+        <ul>
+            {users.map((user) =>{
+                return(
+                    <li key={user.id}>{user.name}: {user.email}</li>
+                )
+            })}
+        </ul>
+
       <h3>Count</h3>
       <p>Welcome to functional components.</p>
       <p>Count: {count}</p>
