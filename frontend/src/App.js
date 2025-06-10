@@ -34,11 +34,15 @@ function App() {
     setCount((prevState) => prevState + 1);
   };
 
-
   return (
     <div className="container">
-      <CounterApp count={count} handleIncrement={handleIncrement}/>
-      <CounterApp count={count} handleIncrement={handleIncrement}/>
+      <div style={{}}>
+        <h5>Counter that update together.</h5>
+        <div style={{ display: "flex", gap: "1rem" }}>
+          <CounterApp count={count} handleIncrement={handleIncrement} />
+          <CounterApp count={count} handleIncrement={handleIncrement} />
+        </div>
+      </div>
       <UseEffectHook />
       <div>
         <h3>Task List</h3>
@@ -62,9 +66,9 @@ function App() {
       <MapItems />
       <ToggleButton />
       <div style={{ display: "flex", gap: "1rem" }}>
-        <UserCard name="Grace Wamuyu" age={28} email="wamuyu@example.com" />
+        <UserCard name="Grace White" age={28} email="wamuyu@example.com" />
       </div>
-      <Welcome fullname="Johnson Muchiri" />
+      <Welcome fullname="Johnson Snow" />
       <Count />
       <CountTwo />
     </div>
