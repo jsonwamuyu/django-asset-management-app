@@ -4,14 +4,13 @@ import {useState} from 'react'
 const ToggleButton = () => {
     const [message, setMessage] = useState('OFF')
 
-    const turnOff = () =>{
-      setMessage("OFF")
+    const turnOffOn = () =>{
+      setMessage(prevState => !prevState)
     }
   return (
     <div>
-        <h3>{message}</h3>
-        <button onClick={()=>setMessage("ON")}>Turn ON</button>
-        <button onClick={turnOff}>Turn OFF</button>
+        <h3>{message? "ON": "OFF"}</h3>
+        <button onClick={turnOffOn}>Turn OFF/ON</button>
     </div>
   )
 }
