@@ -1,15 +1,20 @@
-import './App.css';
-import Count from './components/Practice';
-import CountTwo from './components/PracticeFunction'
-import Welcome from './components/Welcome';
-
+import "./App.css";
+import Count from "./components/Practice";
+import CountTwo from "./components/PracticeFunction";
+import ToggleButton from "./components/ToggleButton";
+import UserCard from "./components/UserCard";
+import Welcome from "./components/Welcome";
 
 function App() {
   return (
     <div className="App">
-      <Welcome fullname="Johnson Muchiri"/>
-        <Count />
-        <CountTwo />
+      <ToggleButton />
+      <div style={{ display: "flex", gap: "1rem" }}>
+        <UserCard name="Grace Wamuyu" age={28} email="wamuyu@example.com" />
+      </div>
+      <Welcome fullname="Johnson Muchiri" />
+      <Count />
+      <CountTwo />
     </div>
   );
 }
